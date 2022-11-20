@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+     <variable
+         name="surah"
+         type="com.example.azcar.model.Surah" />
+
+        <variable
+            name="clickListener"
+            type="com.example.azcar.adapters.QuraanListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvArabicName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:text="الفاتحة"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:arabicNameS="@{surah}"/>
+
+        <TextView
+            android:id="@+id/tvEnglishName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Alfatiha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvArabicName"
+            app:englishbicNameS="@{surah}"/>
+
+
+        <TextView
+            android:id="@+id/tvRevelationType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maca"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvEnglishName"
+            app:revelationTypeS="@{surah}"/>
+
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRevelationType"
+            app:numberS="@{surah}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
